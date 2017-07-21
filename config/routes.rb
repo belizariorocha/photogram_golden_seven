@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get("/", { :controller => "pictures", :action => "index" })
+  
   # CREATE
   get("/photos/new", { :controller => "pictures", :action => "new_form" })
   get("/create_photo", { :controller => "pictures", :action => "create_row" })
@@ -9,8 +11,8 @@ Rails.application.routes.draw do
   get("/photos/:the_id", { :controller => "pictures", :action => "show" })
   
   # UPDATE
-  get("/photos/:an_id/edit", { :controller => "pictures", :action => "edit_form" })
-  get("/update_photo/:some_id", { :controller => "pictures", :action => "update_row" })
+  get("/photos/:the_id/edit", { :controller => "pictures", :action => "edit_form" })
+  get("/update_photo/:the_id", { :controller => "pictures", :action => "update_row" })
   
   # DELETE
   get("/delete_photo/:toast_id", { :controller => "pictures", :action => "destroy_row" })
