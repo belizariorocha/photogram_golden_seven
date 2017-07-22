@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="col-md-6">
+      <h1>Photo Details</h1>
+      <p><%= @pic.caption %></p>
+      <img src="<%= @pic.source %>">
+      <p><%=@post_time%> day<%= if @post_time != 1
+        "s"
+        end %> ago</p>
+      <a href="/photos" class="btn btn-default">Go back</a>
+      <a href="/photos/<%=@id%>/edit" class="btn btn-default">Edit</a>
+      <a href="/delete_photo/<%=@id%>" class="btn btn-default">Delete</a>
+  </div>
+</div>

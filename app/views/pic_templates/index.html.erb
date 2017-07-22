@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Target Photogram Golden Seven</title>
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="oJjBzt2Tg4GHops+0dzpruXQL62xCr8tjVs7LSFfAAH5o1bZ16RxbD036MQttn5SnlVvvliBEcjfk5FxGe3LKg==">
+
+    <link rel="stylesheet" media="all" href="/assets/application-1c79c29286204cfec74780022d0186e27fc9f09c8b5ae96d566e54dca4b9ce48.css">
+    <script src="/assets/application-a1b05e0595224c422d49fd5ef6dd6cb8f9655f710b432bb9b8a6af9638eca09a.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-6">
+            <h1>All Photos</h1>
+            <a href="photos/new">Add a new photo</a>
+            <% @output.each do |x| %>
+            <div class="thumbnail">
+                <img src="<%=x.source%>">
+                    <div class="caption">
+                        <a href="/photos/<%=x.id%>" class="btn btn-default btn-block">Show Details</a>
+                        <a href="/photos/<%=x.id%>/edit" class="btn btn-default btn-block">Edit</a>
+                        <a href="/delete_photo/<%=x.id%>" class="btn btn-default btn-block">Delete</a>
+                    </div>
+            <% end %>    
+            </div>
+        </div>
+    </div>
+</body>
+</html>
