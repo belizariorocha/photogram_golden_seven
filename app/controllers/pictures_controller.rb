@@ -45,14 +45,19 @@ class PicturesController < ApplicationController
         p.caption = params[:the_caption]
         p.save
         
-        render("pic_templates/update_row.html.erb")
+        redirect_to("/photos/#{@id}")
+        
+        # render("pic_templates/update_row.html.erb")
     end
     def destroy_row
         
         @id = params[:the_id]
         Photo.find(@id).destroy
-        @output = Photo.count
-        render("pic_templates/destroy_row.html.erb")
+        
+        redirect_to("/photos")
+        
+        # @output = Photo.count
+        # render("pic_templates/destroy_row.html.erb")
     end
 
 end
