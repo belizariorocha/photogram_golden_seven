@@ -1,6 +1,6 @@
-<h1>Add a new photo</h1>
+<h1>Edit Photo <%=@id%></h1>
 
-<form action="/create_photo">
+<form action="/update_photo/<%=@id%>">
     <div>
         <label for="source_input">Image URL</label>
         <input id="source_input" type="text" name="the_source" value="<%=@pic.source%>">
@@ -9,5 +9,5 @@
         <label for="caption_input">Caption</label>
         <input id="caption_input" type="text" name="the_caption" value="<%=@pic.caption%>">
     </div>
-    <button>Create Photo</button>
+    <button>Update Photo</button>
 </form>

@@ -9,9 +9,11 @@ class PicturesController < ApplicationController
         p.caption = params[:the_caption]
         p.save
         
-        @output = Photo.count
+        # @output = Photo.count
+        # render("pic_templates/create_row.html.erb")
         
-        render("pic_templates/create_row.html.erb")
+        redirect_to("/photos")
+        
     end
     def index
         
@@ -23,18 +25,33 @@ class PicturesController < ApplicationController
         
         @id = params[:the_id]
         @pic = Photo.find(@id)
-        @post_time = (Time.now - @pic.created_at).to_i/(24*60*60)
+        @post_time = (Time.now - @pic.updated_at).to_i/(24*60*60)
         
         
         render("pic_templates/show.html.erb")
     end
     def edit_form
+        
+        @id = params[:the_id]
+        @pic = Photo.find(@id)
+        
         render("pic_templates/edit_form.html.erb")
     end
     def update_row
+        
+        @id = params[:the_id]
+        p = Photo.find(@id)
+        p.source = params[:the_source]
+        p.caption = params[:the_caption]
+        p.save
+        
         render("pic_templates/update_row.html.erb")
     end
     def destroy_row
+        
+        @id = params[:the_id]
+        Photo.find(@id).destroy
+        @output = Photo.count
         render("pic_templates/destroy_row.html.erb")
     end
 

@@ -3,7 +3,7 @@
       <h1>Photo Details</h1>
       <p><%= @pic.caption %></p>
       <img src="<%= @pic.source %>">
-      <p><%=@post_time%> day<%= if @post_time > 1
+      <p><%=@post_time%> day<%= if @post_time != 1
         "s"
         end %> ago</p>
       <a href="/photos" class="btn btn-default">Go back</a>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get("/update_photo/:the_id", { :controller => "pictures", :action => "update_row" })
   
   # DELETE
-  get("/delete_photo/:toast_id", { :controller => "pictures", :action => "destroy_row" })
+  get("/delete_photo/:the_id", { :controller => "pictures", :action => "destroy_row" })
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :admin_users, ActiveAdmin::Devise.config
